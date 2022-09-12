@@ -10,12 +10,12 @@ body{
 }
 nav a{
 font-size: larger;
-margin-top: 1rem;
+margin: 1rem;
 text-decoration: none;
 color:#fff;
-padding: 2rem;
 }
 nav{
+    text-align: right;
     margin-top: 0;
     padding:1rem;
     background-color: #368DC5;
@@ -45,14 +45,16 @@ button{
     padding:0.5rem;
     border: none;
     border-radius: 0.5rem;
-    width: 20%;
+    width: 25%;
     align-self: center;
     cursor: pointer;
     color: #fff;
+
 }
 #output{
 margin-top: 1rem;
 font-size: larger;
+margin-bottom: 1rem;
 }
 
 h2{
@@ -70,4 +72,22 @@ h2{
   margin: 1rem auto;
   font-size: larger;
   padding: 1rem 0;
+}
+
+footer a{
+    font-size: large;
+    margin: 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bolder;
+}
+footer{
+    position: fixed;
+    
+  background-color: #368DC5;
+ padding: 1rem;
+ right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
 }
