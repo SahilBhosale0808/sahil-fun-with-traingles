@@ -1,27 +1,20 @@
-const sides = document.querySelectorAll(".input");
-const hypotenuseBtn = document.querySelector("#calculate-btn");
-const output_text = document.querySelector("#output");
+const sideA = document.getElementById("sideA");
+const sideB = document.getElementById("sideB");
+const btn = document.getElementById("calculate-btn");
+const output = document.getElementById("output");
 
-function calculateSumOfSquares(a, b) {
-  const sumOfSquares = a * a + b * b;
-  return sumOfSquares;
+function clickHandler() {
+  if (sideA.value > 0 && sideB.value > 0) {
+    output.innerHTML =
+      "The length of the hypotenuse is " +
+      Math.round(
+        Math.sqrt(sideA.value * sideA.value + sideB.value * sideB.value) * 10
+      ) /
+        10 +
+      " cm";
+  } else {
+    output.innerHTML = "The length of sides cannot be 0 ";
+  }
 }
 
-function calculateHypotenuse() {
-  if (sides[0].value.length === 0 || sides[1].value.length === 0) {
-    output_text.innerText = "Empty fields are not allowed!";
-    return;
-  }
-  if (Number(sides[0].value) < 0 || Number(sides[1].value) < 0) {
-    output_text.innerText = "Enter positive values";
-    return;
-  }
-  const sumOfSquares = calculateSumOfSquares(Number(sides[0].value),Number(sides[1].value));
-  const lengthOfHypotenuse = Math.sqrt(sumOfSquares);
-
-  output_text.innerText =
-    "The length of hypotenuse is " + lengthOfHypotenuse.toFixed(2); 
-    // format a number with a specific number of digits to the right of the decimal. 
-}
-
-hypotenuseBtn.addEventListener("click", calculateHypotenuse);
+btn && btn.addEventListener("click", clickHandler);
